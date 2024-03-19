@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Qouted
+{% endblock %}
+
+{% block main %}
+
+        <div class="mb-3">
+            <h2>Stock price</h2>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>symbol</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                            <tr>
+                                <td>{{ stocks.symbol }}</td>
+                                <td>{{ stocks.price | usd }}</td>
+                            </tr>
+
+                    </tbody>
+                </table>
+                <p>{{ stocks.price }}</p>
+        </div>
+
+{% endblock %}

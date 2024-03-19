@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    portfolio
+{% endblock %}
+
+{% block main %}
+
+        <div class="mb-3">
+            <h2>Bought</h2>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>symbol</th>
+                            <th>shares</th>
+                            <th>price</th>
+                            <th>total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-dark">
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                            {% for stock in stocks %}
+                                {% set i = loop.index %}
+
+                                <tr>
+                                    <td>{{ stock["symbol"] }}</td>
+                                    <td>{{ stock["quantaty"] }}</td>
+                                    <td>{{ stock["price"] }}</td>
+                                    <td>{{ total_usd[i-1] }}</td>
+                                </tr>
+
+                            {% endfor %}
+
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>cash {{ cash }}</td>
+                        </tr>
+                        <tr>
+                            <td>total {{ all }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+{% endblock %}

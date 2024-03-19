@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+        <div class="mb-3">
+            <h2>History</h2>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>symbol</th>
+                            <th>price</th>
+                            <th>quantaty</th>
+                            <th>time</th>
+                            <th>type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                        {% for stock in history %}
+                            <tr>
+                                <td>{{ stock["symbol"] }}</td>
+                                <td>{{ stock["price"] | usd }}</td>
+                                <td>{{ stock["quantaty"] }}</td>
+                                <td>{{ stock["sell_time"] }}</td>
+                                <td>{{ stock["tran"] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+
+{% endblock %}
